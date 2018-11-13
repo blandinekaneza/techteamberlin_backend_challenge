@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Payload</th>
+      <th>Payload id</th>
       <th>Reused</th>
       <th>Manufacturer</th>
       <th>Payload type</th>
@@ -19,21 +19,17 @@
   <tbody>
     <% @payloads.each do |payload| %>
       <tr>
-        <td><%= payload.payload_id %></td>
-        <td><%= payload.reused %></td>
-        <td><%= payload.manufacturer %></td>
-        <td><%= payload.payload_type %></td>
-        <td><%= payload.payload_mass_kg %></td>
-        <td><%= payload.payload_mass_lbs %></td>
-        <td><%= payload.orbit %></td>
-        <td><%= link_to 'Show', payload %></td>
-        <td><%= link_to 'Edit', edit_payload_path(payload) %></td>
-        <td><%= link_to 'Destroy', payload, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= payload["payload_id"] %></td>
+        <td><%= payload["reused"] %></td>
+        <td><%= payload["manufacturer"] %></td>
+        <td><%= payload["payload_type"] %></td>
+        <td><%= payload["payload_mass_kg"] %></td>
+        <td><%= payload["payload_mass_lbs"] %></td>
+        <td><%= payload["orbit"] %></td>
+        <td>
+          <%= link_to 'show', payload_path(id: payload["payload_id"]) %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Payload', new_payload_path %>

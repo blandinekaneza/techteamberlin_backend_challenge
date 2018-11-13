@@ -2,38 +2,32 @@
 
 <p>
   <strong>Mission name:</strong>
-  <%= @mission.mission_name %>
+  <%= @mission["mission_name"] %>
 </p>
 
 <p>
-  <strong>Mission:</strong>
-  <%= @mission.mission_id %>
+  <strong>Mission id:</strong>
+  <%= @mission["mission_id"] %>
 </p>
 
 <p>
   <strong>Wikipedia:</strong>
-  <%= @mission.wikipedia %>
+  <%= @mission["wikipedia"] %>
 </p>
 
 <p>
   <strong>Website:</strong>
-  <%= @mission.website %>
-</p>
-
-<p>
-  <strong>Website:</strong>
-  <%= @mission.website %>
+  <%= @mission["website"] %>
 </p>
 
 <p>
   <strong>Twitter:</strong>
-  <%= @mission.twitter %>
+  <%= @mission["twitter"] %>
 </p>
 
 <p>
   <strong>Description:</strong>
-  <%= @mission.description %>
+  <%= @mission["description"] %>
 </p>
 
-<%= link_to 'Edit', edit_mission_path(@mission) %> |
-<%= link_to 'Back', missions_path %>
+<%= link_to 'back', missions_path %>

@@ -1,39 +1,39 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Payload:</strong>
-  <%= @payload.payload_id %>
+  <strong>Payload Id:</strong>
+  <%= @payload["payload_id"] %>
 </p>
 
 <p>
   <strong>Reused:</strong>
-  <%= @payload.reused %>
+  <%= @payload["reused"] %>
 </p>
 
 <p>
   <strong>Manufacturer:</strong>
-  <%= @payload.manufacturer %>
+  <%= @payload["manufacturer"] %>
 </p>
 
 <p>
   <strong>Payload type:</strong>
-  <%= @payload.payload_type %>
+  <%= @payload["payload_type"] %>
 </p>
 
 <p>
   <strong>Payload mass kg:</strong>
-  <%= @payload.payload_mass_kg %>
+  <%= @payload["payload_mass_kg"] %>
 </p>
 
 <p>
   <strong>Payload mass lbs:</strong>
-  <%= @payload.payload_mass_lbs %>
+  <%= @payload["payload_mass_lbs"] %>
 </p>
 
 <p>
   <strong>Orbit:</strong>
-  <%= @payload.orbit %>
+  <%= @payload["orbit"] %>
 </p>
 
-<%= link_to 'Edit', edit_payload_path(@payload) %> |
-<%= link_to 'Back', payloads_path %>
+
+<%= link_to 'back', payloads_path %>

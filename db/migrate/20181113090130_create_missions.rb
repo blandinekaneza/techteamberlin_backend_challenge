@@ -5,7 +5,6 @@ class CreateMissions < ActiveRecord::Migration[5.2]
       t.integer :mission_id
       t.text :wikipedia
       t.text :website
-      t.text :website
       t.text :twitter
       t.text :description
 

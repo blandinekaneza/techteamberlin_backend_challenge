@@ -2,13 +2,18 @@
 
 <h1>Missions</h1>
 
+<%= form_tag(missions_path, method: :get) do %>
+  <%= text_field_tag :term, params[:term] %>
+  <%= submit_tag 'Search', name: nil %>
+<% end %>
+
+
 <table>
   <thead>
     <tr>
       <th>Mission name</th>
-      <th>Mission</th>
+      <th>Mission id</th>
       <th>Wikipedia</th>
-      <th>Website</th>
       <th>Website</th>
       <th>Twitter</th>
       <th>Description</th>
@@ -17,23 +22,18 @@
   </thead>
 
   <tbody>
-    <% @missions.each do |mission| %>
+    <% @mission.each do |mission| %>
       <tr>
-        <td><%= mission.mission_name %></td>
-        <td><%= mission.mission_id %></td>
-        <td><%= mission.wikipedia %></td>
-        <td><%= mission.website %></td>
-        <td><%= mission.website %></td>
-        <td><%= mission.twitter %></td>
-        <td><%= mission.description %></td>
-        <td><%= link_to 'Show', mission %></td>
-        <td><%= link_to 'Edit', edit_mission_path(mission) %></td>
-        <td><%= link_to 'Destroy', mission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= mission["mission_name"] %></td>
+        <td><%= mission["mission_id"] %></td>
+        <td><%= mission["wikipedia"] %></td>
+        <td><%= mission["website"] %></td>
+        <td><%= mission["twitter"] %></td>
+        <td><%= mission["description"] %></td>
+        <td>
+          <%= link_to 'show', mission_path(id: mission["mission_id"]) %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Mission', new_mission_path %>

@@ -11,17 +11,16 @@
   </thead>
 
   <tbody>
-    <% @nationalities.each do |nationality| %>
+    <% @payloads.each do |nationality| %>
       <tr>
-        <td><%= nationality.name %></td>
-        <td><%= link_to 'Show', nationality %></td>
-        <td><%= link_to 'Edit', edit_nationality_path(nationality) %></td>
-        <td><%= link_to 'Destroy', nationality, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= nationality["nationality"] %></td>
+        <td>
+          <%= link_to 'payloads', payloads_path(nationality: nationality["nationality"]) %>
+        </td>
+        <td>
+          <%= link_to 'missions', missions_path(nationality: nationality["nationality"]) %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Nationality', new_nationality_path %>
