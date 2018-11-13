@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  payload_id: 1
+  reused: false
+  manufacturer: MyText
+  payload_type: MyText
+  payload_mass_kg: 1
+  payload_mass_lbs: 1
+  orbit: MyText
+
+two:
+  payload_id: 1
+  reused: false
+  manufacturer: MyText
+  payload_type: MyText
+  payload_mass_kg: 1
+  payload_mass_lbs: 1
+  orbit: MyText

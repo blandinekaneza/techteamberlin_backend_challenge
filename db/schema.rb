@@ -10,9 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2018_11_13_090333) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "missions", force: :cascade do |t|
+    t.string "mission_name"
+    t.integer "mission_id"
+    t.text "wikipedia"
+    t.text "website"
+    t.text "twitter"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "nationalities", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "payloads", force: :cascade do |t|
+    t.integer "payload_id"
+    t.boolean "reused"
+    t.text "manufacturer"
+    t.text "payload_type"
+    t.integer "payload_mass_kg"
+    t.integer "payload_mass_lbs"
+    t.text "orbit"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
